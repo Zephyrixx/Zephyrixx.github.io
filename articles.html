@@ -21,27 +21,22 @@
   </nav>
 
   <div class="container">
-    <div class="article-section">
-      <!-- 文章收藏 -->
-      <div class="article-card" onclick="toggleContent('article-detail')">
-        <h2>文章收藏</h2>
-        <div id="article-detail" class="content-detail">
-          <p>• Git & GitHub 完全使用指南</p>
-          <p>• C 语言指针与内存管理</p>
-          <p>• Python 爬虫基础与反爬</p>
-          <p>• Linux 环境与 Docker 入门</p>
-        </div>
+    <div class="card" onclick="toggle('art1')">
+      <h2>文章收藏</h2>
+      <div class="detail" id="art1">
+        <p>• Git & GitHub 完全使用指南</p>
+        <p>• C 语言指针与内存管理</p>
+        <p>• Python 爬虫基础与反爬</p>
+        <p>• Linux 环境与 Docker 入门</p>
       </div>
+    </div>
 
-      <!-- 学习笔记 -->
-      <div class="article-card" onclick="toggleContent('note-detail')">
-        <h2>学习笔记</h2>
-        <div id="note-detail" class="content-detail">
-          <p>• 数据结构与算法笔记</p>
-          <p>• 操作系统基础总结</p>
-          <p>• 计算机网络知识点</p>
-          <p>• 嵌入式开发入门</p>
-        </div>
+    <div class="card" onclick="toggle('art2')">
+      <h2>学习笔记</h2>
+      <div class="detail" id="art2">
+        <p>• 数据结构与算法</p>
+        <p>• 操作系统</p>
+        <p>• 计算机网络</p>
       </div>
     </div>
   </div>
@@ -63,9 +58,8 @@
       localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    function toggleContent(id) {
-      const el = document.getElementById(id);
-      el.classList.toggle('show');
+    function toggle(id) {
+      document.getElementById(id).classList.toggle('show');
     }
   </script>
 </body>

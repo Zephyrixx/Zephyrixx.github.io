@@ -1,11 +1,11 @@
-/* 全局重置，强制覆盖所有默认样式 */
+/* 全局重置 */
 * {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* 🌟 统一星空背景（全局生效） */
+/* 背景 */
 #page-body {
   background: url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?w=1920&h=1080&fit=crop') no-repeat center center fixed !important;
   background-size: cover !important;
@@ -17,7 +17,6 @@
   padding: 0 !important;
 }
 
-/* 暗黑模式背景（同一张星空，加深效果） */
 #page-body.dark {
   background: url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?w=1920&h=1080&fit=crop') no-repeat center center fixed !important;
   background-size: cover !important;
@@ -27,7 +26,7 @@
   color: #fff !important;
 }
 
-/* 导航栏：半透明毛玻璃，适配星空背景 */
+/* 导航 */
 nav {
   background: rgba(0, 0, 0, 0.6) !important;
   backdrop-filter: blur(12px) !important;
@@ -83,7 +82,7 @@ body.dark .nav-links a {
   color: #0d6efd !important;
 }
 
-/* 切换模式按钮 */
+/* 按钮 */
 .theme-btn {
   background: #0d6efd !important;
   color: white !important;
@@ -100,7 +99,7 @@ body.dark .nav-links a {
   box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4) !important;
 }
 
-/* 头像样式 */
+/* 头像 */
 .avatar {
   width: 150px !important;
   height: 150px !important;
@@ -115,7 +114,6 @@ body.dark .avatar {
   border-color: rgba(68,68,68,0.9) !important;
 }
 
-/* 天青色文字（首页名言） */
 #special-bio {
   color: #4ECDC4 !important;
   font-size: 1.3rem !important;
@@ -130,7 +128,7 @@ body.dark #special-bio {
   color: #4ECDC4 !important;
 }
 
-/* 个人信息卡片（首页） */
+/* 首页卡片 */
 .profile {
   text-align: center !important;
   max-width: 900px !important;
@@ -155,7 +153,6 @@ body.dark .profile {
   text-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
 }
 
-/* 首页按钮 */
 .nav-buttons {
   display: flex !important;
   justify-content: center !important;
@@ -182,10 +179,10 @@ body.dark .profile {
   box-shadow: 0 6px 20px rgba(13, 110, 253, 0.5) !important;
 }
 
-/* 🌟 代码页/文章页 卡片宽度 */
-.content-card {
+/* ====================== 统一卡片样式 ====================== */
+.card {
   max-width: 700px !important;
-  margin: 0 auto 2rem !important;
+  margin: 0 auto 1.5rem !important;
   background: rgba(0, 0, 0, 0.5) !important;
   padding: 2rem !important;
   border-radius: 20px !important;
@@ -197,60 +194,33 @@ body.dark .profile {
   transition: 0.3s !important;
 }
 
-.content-card:hover {
-  transform: scale(1.02) !important;
+.card:hover {
+  transform: scale(1.02);
 }
 
-body.dark .content-card {
+body.dark .card {
   background: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* 展开内容区域（默认隐藏） */
-.content-detail {
+/* 展开内容 */
+.detail {
   display: none;
-  margin-top: 1.5rem !important;
-  text-align: left !important;
-  padding: 1.5rem !important;
+  margin-top: 1rem !important;
+  padding: 1.2rem !important;
   background: rgba(0,0,0,0.3) !important;
   border-radius: 12px !important;
+  text-align: left !important;
 }
 
-.content-detail.show {
+.detail.show {
   display: block !important;
 }
 
-.content-card h1,
-.content-card h2,
-.content-card h3 {
-  margin: 0.5rem 0 !important;
-}
-
-.article-section {
-  max-width: 700px !important;
+/* 布局容器 */
+.container {
+  max-width: 1200px !important;
   margin: 0 auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1.5rem !important;
-}
-
-.article-card {
-  background: rgba(0, 0, 0, 0.5) !important;
-  padding: 2rem !important;
-  border-radius: 20px !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
-  text-align: center !important;
-  cursor: pointer !important;
-  transition: 0.3s !important;
-}
-
-.article-card:hover {
-  transform: scale(1.02) !important;
-}
-
-body.dark .article-card {
-  background: rgba(0, 0, 0, 0.7) !important;
+  padding: 0 1.5rem !important;
 }
 
 /* 底部 */
@@ -266,10 +236,4 @@ footer {
 body.dark footer {
   color: #aaa !important;
   border-top-color: rgba(68,68,68,0.3) !important;
-}
-
-.container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 0 1.5rem !important;
 }

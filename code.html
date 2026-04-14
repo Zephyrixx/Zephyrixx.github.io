@@ -21,14 +21,21 @@
   </nav>
 
   <div class="container">
-    <div class="content-card" onclick="toggleContent('code-detail')">
-      <h1>我的代码项目</h1>
-      <div id="code-detail" class="content-detail">
-        <h3>🐍 Python 爬虫</h3>
-        <p>• 网页数据抓取工具</p>
-        <p>• 批量下载文章 / 图片</p>
-        <p>• 接口请求与数据解析</p>
-        <p>• 反爬处理实践</p>
+    <div class="card" onclick="toggle('code1')">
+      <h2>我的代码项目</h2>
+      <div class="detail" id="code1">
+        <p>• Python 爬虫</p>
+        <p>• 数据处理工具</p>
+        <p>• 自动化脚本</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggle('code2')">
+      <h2>Python 爬虫</h2>
+      <div class="detail" id="code2">
+        <p>• 网页抓取</p>
+        <p>• 数据解析</p>
+        <p>• 反爬处理</p>
       </div>
     </div>
   </div>
@@ -50,10 +57,8 @@
       localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // 点击展开/收起内容
-    function toggleContent(id) {
-      const el = document.getElementById(id);
-      el.classList.toggle('show');
+    function toggle(id) {
+      document.getElementById(id).classList.toggle('show');
     }
   </script>
 </body>
