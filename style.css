@@ -1,4 +1,3 @@
-/* 全局重置，强制覆盖 simple.css */
 * {
   margin: 0 !important;
   padding: 0 !important;
@@ -9,17 +8,15 @@ body {
   background: #f7f8fa !important;
   color: #333 !important;
   line-height: 1.7 !important;
-  max-width: 100% !important; /* 取消默认最大宽度 */
+  max-width: 100% !important;
   padding: 0 !important;
 }
 
-/* 暗黑模式基础样式 */
 body.dark {
   background: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-/* 导航栏 */
 nav {
   background: #fff !important;
   padding: 1rem 2rem !important;
@@ -71,7 +68,6 @@ body.dark .nav-links a {
   color: #0d6efd !important;
 }
 
-/* 暗黑模式按钮样式 */
 .theme-btn {
   background: #0d6efd !important;
   color: white !important;
@@ -82,7 +78,7 @@ body.dark .nav-links a {
   font-size: 0.9rem !important;
 }
 
-/* 头像样式：强制圆形 + 尺寸固定 */
+/* 头像样式：强制圆形，适配本地图片 */
 .avatar {
   width: 130px !important;
   height: 130px !important;
@@ -90,22 +86,26 @@ body.dark .nav-links a {
   object-fit: cover !important;
   margin-bottom: 1rem !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-  border: 3px solid white !important; /* 加个白边更美观 */
+  border: 3px solid #fff !important;
 }
 
-/* 天青色文字：这是核心修改！ */
+body.dark .avatar {
+  border-color: #333 !important;
+}
+
+/* 天青色文字，强制生效 */
 #special-bio {
-  color: #4ECDC4 !important; /* 天青色，确保百分百生效 */
+  color: #4ECDC4 !important;
   font-size: 1.15rem !important;
   font-weight: 500 !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+  text-align: center !important;
+  line-height: 1.8 !important;
 }
 
 body.dark #special-bio {
-  color: #4ECDC4 !important; /* 暗黑模式下也保持天青色 */
+  color: #4ECDC4 !important;
 }
 
-/* 个人信息布局 */
 .profile {
   text-align: center !important;
   margin-bottom: 2.5rem !important;
@@ -115,9 +115,9 @@ body.dark #special-bio {
   color: #0d6efd !important;
   text-decoration: none !important;
   font-weight: 500 !important;
+  font-size: 1.2rem !important;
 }
 
-/* 按钮样式 */
 .nav-buttons {
   margin-top: 1rem !important;
   display: flex !important;
@@ -142,7 +142,6 @@ body.dark #special-bio {
   box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3) !important;
 }
 
-/* 底部 */
 footer {
   text-align: center !important;
   margin-top: 4rem !important;

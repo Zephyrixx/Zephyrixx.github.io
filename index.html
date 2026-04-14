@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zephyrix 的个人主页</title>
-  <!-- 引入第三方样式 -->
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-  <!-- 引入你的自定义样式 -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,21 +16,20 @@
         <li><a href="code.html">代码</a></li>
         <li><a href="articles.html">文章</a></li>
       </ul>
-      <!-- 修复：暗黑模式按钮 -->
       <button id="theme-toggle" class="theme-btn">暗黑模式</button>
     </div>
   </nav>
 
   <div class="container">
     <div class="profile">
-      <!-- 修复：正确的头像图片链接 -->
-      <img src="https://i.imgur.com/7dLtRjB.png" alt="Zephyrix" class="avatar">
+      <!-- 直接引用仓库里的本地头像，绝对不会加载失败 -->
+      <img src="avatar.png" alt="Zephyrix" class="avatar">
       
       <h1>Zephyrix</h1>
       
-      <!-- 修复：天青色文字 -->
+      <!-- 天青色文字，强制生效 -->
       <p class="bio" id="special-bio">
-        我也会奢望，你和我的故事……在这个尽头里重生--直到完美的结局……或许并没有完美的结局。
+        我也会奢望，你和我的故事······在这个尽头里重生--直到完美的结局.......或许并没有完美的结局。
       </p>
 
       <div class="social">
@@ -51,11 +48,9 @@
   </footer>
 
   <script>
-    // 暗黑模式逻辑
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
     
-    // 检查本地存储
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark');
     }
