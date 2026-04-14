@@ -1,26 +1,39 @@
+/* 全局重置 */
 * {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
 
-body {
-  background: #f7f8fa !important;
+/* 🌟 关键：白天模式背景图 */
+#page-body {
+  /* 你可以把这里的链接换成任何你喜欢的背景图 URL */
+  background: url('https://images.alphacoders.com/132/1324195.png') no-repeat center center fixed !important;
+  background-size: cover !important; /* 覆盖全屏 */
   color: #333 !important;
   line-height: 1.7 !important;
   max-width: 100% !important;
   padding: 0 !important;
+  min-height: 100vh !important; /* 保证高度撑满 */
 }
 
-body.dark {
-  background: #121212 !important;
+/* 🌟 关键：暗黑模式背景图 */
+#page-body.dark {
+  /* 这里是暗黑模式的背景，可以换成深色系的图片 */
+  background: url('https://images.alphacoders.com/132/1324195.png') no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-color: #121212 !important;
+  background-blend-mode: multiply !important; /* 混合模式，让图片变暗 */
   color: #e0e0e0 !important;
 }
 
+/* 导航栏 */
 nav {
-  background: #fff !important;
+  background: rgba(255, 255, 255, 0.85) !important; /* 半透明导航栏 */
+  backdrop-filter: blur(10px) !important; /* 毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px) !important;
   padding: 1rem 2rem !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
   margin-bottom: 2.5rem !important;
   position: sticky !important;
   top: 0 !important;
@@ -29,7 +42,7 @@ nav {
 }
 
 body.dark nav {
-  background: #1e1e1e !important;
+  background: rgba(30, 30, 30, 0.85) !important;
 }
 
 .nav-container {
@@ -68,6 +81,7 @@ body.dark .nav-links a {
   color: #0d6efd !important;
 }
 
+/* 按钮样式 */
 .theme-btn {
   background: #0d6efd !important;
   color: white !important;
@@ -78,37 +92,47 @@ body.dark .nav-links a {
   font-size: 0.9rem !important;
 }
 
-/* 头像样式：强制圆形，适配本地图片 */
+/* 头像样式 */
 .avatar {
   width: 130px !important;
   height: 130px !important;
   border-radius: 50% !important;
   object-fit: cover !important;
   margin-bottom: 1rem !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
   border: 3px solid #fff !important;
 }
 
 body.dark .avatar {
-  border-color: #333 !important;
+  border-color: #444 !important;
 }
 
-/* 天青色文字，强制生效 */
+/* 天青色文字 */
 #special-bio {
   color: #4ECDC4 !important;
   font-size: 1.15rem !important;
   font-weight: 500 !important;
   text-align: center !important;
   line-height: 1.8 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2) !important; /* 加个阴影更清晰 */
 }
 
 body.dark #special-bio {
   color: #4ECDC4 !important;
 }
 
+/* 布局居中 */
 .profile {
   text-align: center !important;
   margin-bottom: 2.5rem !important;
+  background: rgba(255, 255, 255, 0.2) !important; /* 半透明卡片 */
+  padding: 2rem !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+body.dark .profile {
+  background: rgba(20, 20, 20, 0.5) !important;
 }
 
 .social a {
@@ -139,7 +163,7 @@ body.dark #special-bio {
 
 .button:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3) !important;
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4) !important;
 }
 
 footer {
@@ -147,10 +171,8 @@ footer {
   margin-top: 4rem !important;
   padding: 2rem 0 !important;
   color: #666 !important;
-  border-top: 1px solid #eee !important;
 }
 
 body.dark footer {
   color: #aaa !important;
-  border-top-color: #333 !important;
 }
