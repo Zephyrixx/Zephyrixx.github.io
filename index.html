@@ -4,12 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zephyrix 的个人主页</title>
-  <!-- 引入基础样式 -->
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-  <!-- 引入你的自定义样式 -->
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- 这里加个id方便控制背景 -->
 <body id="page-body">
   <nav>
     <div class="nav-container">
@@ -19,23 +16,17 @@
         <li><a href="code.html">代码</a></li>
         <li><a href="articles.html">文章</a></li>
       </ul>
-      <!-- 修复：确保按钮存在 -->
       <button id="theme-toggle" class="theme-btn">切换模式</button>
     </div>
   </nav>
 
   <div class="container">
     <div class="profile">
-      <!-- 头像：直接用你上传到仓库的本地图片 -->
       <img src="avatar.png" alt="Zephyrix" class="avatar">
-      
       <h1>Zephyrix</h1>
-      
-      <!-- 你的天青色名言 -->
       <p class="bio" id="special-bio">
         我也会奢望，你和我的故事······在这个尽头里重生--直到完美的结局.......或许并没有完美的结局。
       </p>
-
       <div class="social">
         <a href="https://github.com/Zephyrixx" target="_blank">GitHub</a>
       </div>
@@ -55,7 +46,6 @@
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.getElementById('page-body');
     
-    // 初始化
     if (localStorage.getItem('theme') === 'dark') {
       body.classList.add('dark');
     }
