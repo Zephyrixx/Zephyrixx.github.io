@@ -182,9 +182,9 @@ body.dark .profile {
   box-shadow: 0 6px 20px rgba(13, 110, 253, 0.5) !important;
 }
 
-/* 代码页/文章页 通用卡片样式：核心修改！宽度从1000px改为600px，更窄 */
+/* 🌟 代码页/文章页 通用卡片：核心修改！宽度调窄为 800px */
 .content-card {
-  max-width: 600px !important;
+  max-width: 800px !important; /* 从 1000px 改为 800px，变窄了 */
   margin: 0 auto 2rem !important;
   background: rgba(0, 0, 0, 0.5) !important;
   padding: 2.5rem !important;
@@ -199,27 +199,20 @@ body.dark .content-card {
   background: rgba(0, 0, 0, 0.7) !important;
 }
 
+/* 代码页：上下分行布局 */
+.code-section {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important; /* 两个标题之间的间距 */
+}
+
 .content-card h1 {
-  font-size: 3rem !important;
-  margin-bottom: 1rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-}
-
-.content-card h2 {
-  font-size: 2.2rem !important;
-  margin-bottom: 1.5rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-}
-
-/* 代码页：只保留标题，删除所有小字 */
-.code-card h1 {
   font-size: 3.5rem !important;
-  margin-bottom: 0.5rem !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
 }
 
-.code-card h3 {
-  font-size: 2.5rem !important;
-  margin: 1.5rem 0 0.5rem !important;
+.content-card h3 {
+  font-size: 2.8rem !important;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
 }
 
@@ -228,7 +221,7 @@ body.dark .content-card {
   display: flex !important;
   flex-direction: column !important;
   gap: 2rem !important;
-  max-width: 600px !important;
+  max-width: 800px !important; /* 同步调窄 */
   margin: 0 auto 3rem !important;
 }
 
