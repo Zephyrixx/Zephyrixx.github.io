@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
+<body id="page-body">
   <nav>
     <div class="nav-container">
       <a href="index.html" class="logo">Zephyrix</a>
@@ -17,30 +16,20 @@
         <li><a href="code.html">代码</a></li>
         <li><a href="articles.html">文章</a></li>
       </ul>
-      <button id="theme-toggle">暗黑模式</button>
+      <button id="theme-toggle" class="theme-btn">切换模式</button>
     </div>
   </nav>
 
   <div class="container">
-    <h1>我的代码项目</h1>
-    <p>自用工具、爬虫、算法与嵌入式相关代码</p>
+    <div class="profile">
+      <h1>我的代码项目</h1>
+      <p>自用工具、爬虫、算法与嵌入式相关代码</p>
 
-    <div class="card-list">
-      <div class="card">
-        <h3>Python 爬虫</h3>
-        <p>网页内容抓取、文章保存、批量下载工具</p>
-      </div>
-      <div class="card">
-        <h3>C / C++ 练习</h3>
-        <p>指针、内存、算法、数据结构练习</p>
-      </div>
-      <div class="card">
-        <h3>智能小车 / Apollo</h3>
-        <p>ROS2、路径规划、目标检测相关实践</p>
-      </div>
-      <div class="card">
-        <h3>小工具脚本</h3>
-        <p>批量重命名、数据处理、自动化脚本</p>
+      <div class="card-list">
+        <div class="card">
+          <h3>Python 爬虫</h3>
+          <p>网页内容抓取、文章保存、批量下载工具</p>
+        </div>
       </div>
     </div>
   </div>
@@ -51,13 +40,16 @@
 
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    });
+    const body = document.getElementById('page-body');
+    
     if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
+      body.classList.add('dark');
     }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
   </script>
 </body>
 </html>

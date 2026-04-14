@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
+<body id="page-body">
   <nav>
     <div class="nav-container">
       <a href="index.html" class="logo">Zephyrix</a>
@@ -17,31 +16,14 @@
         <li><a href="code.html">代码</a></li>
         <li><a href="articles.html">文章</a></li>
       </ul>
-      <button id="theme-toggle">暗黑模式</button>
+      <button id="theme-toggle" class="theme-btn">切换模式</button>
     </div>
   </nav>
 
   <div class="container">
-    <h1>文章收藏 & 学习笔记</h1>
-    <p>技术文章、学习总结、资料整理</p>
-
-    <div class="article-list">
-      <div class="article-item">
-        <h3>Git & GitHub 完全使用指南</h3>
-        <p>2026-04-14</p>
-      </div>
-      <div class="article-item">
-        <h3>C 语言指针与内存管理</h3>
-        <p>2026-04-14</p>
-      </div>
-      <div class="article-item">
-        <h3>Python 爬虫基础与反爬</h3>
-        <p>2026-04-14</p>
-      </div>
-      <div class="article-item">
-        <h3>Linux 环境与 Docker 入门</h3>
-        <p>2026-04-14</p>
-      </div>
+    <div class="profile">
+      <h1>文章收藏 & 学习笔记</h1>
+      <p>技术文章、学习总结、资料整理</p>
     </div>
   </div>
 
@@ -51,13 +33,16 @@
 
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    });
+    const body = document.getElementById('page-body');
+    
     if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
+      body.classList.add('dark');
     }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
   </script>
 </body>
 </html>
