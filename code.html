@@ -21,10 +21,15 @@
   </nav>
 
   <div class="container">
-    <!-- 代码页：使用上下布局的类 -->
-    <div class="content-card code-section">
+    <div class="content-card" onclick="toggleContent('code-detail')">
       <h1>我的代码项目</h1>
-      <h3>Python 爬虫</h3>
+      <div id="code-detail" class="content-detail">
+        <h3>🐍 Python 爬虫</h3>
+        <p>• 网页数据抓取工具</p>
+        <p>• 批量下载文章 / 图片</p>
+        <p>• 接口请求与数据解析</p>
+        <p>• 反爬处理实践</p>
+      </div>
     </div>
   </div>
 
@@ -44,6 +49,12 @@
       body.classList.toggle('dark');
       localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
     });
+
+    // 点击展开/收起内容
+    function toggleContent(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('show');
+    }
   </script>
 </body>
 </html>

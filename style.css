@@ -182,67 +182,75 @@ body.dark .profile {
   box-shadow: 0 6px 20px rgba(13, 110, 253, 0.5) !important;
 }
 
-/* 🌟 代码页/文章页 通用卡片：核心修改！宽度调窄为 800px */
+/* 🌟 代码页/文章页 卡片宽度 */
 .content-card {
-  max-width: 800px !important; /* 从 1000px 改为 800px，变窄了 */
+  max-width: 700px !important;
   margin: 0 auto 2rem !important;
   background: rgba(0, 0, 0, 0.5) !important;
-  padding: 2.5rem !important;
+  padding: 2rem !important;
   border-radius: 20px !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
   text-align: center !important;
+  cursor: pointer !important;
+  transition: 0.3s !important;
+}
+
+.content-card:hover {
+  transform: scale(1.02) !important;
 }
 
 body.dark .content-card {
   background: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* 代码页：上下分行布局 */
-.code-section {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1.5rem !important; /* 两个标题之间的间距 */
+/* 展开内容区域（默认隐藏） */
+.content-detail {
+  display: none;
+  margin-top: 1.5rem !important;
+  text-align: left !important;
+  padding: 1.5rem !important;
+  background: rgba(0,0,0,0.3) !important;
+  border-radius: 12px !important;
 }
 
-.content-card h1 {
-  font-size: 3.5rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
+.content-detail.show {
+  display: block !important;
 }
 
+.content-card h1,
+.content-card h2,
 .content-card h3 {
-  font-size: 2.8rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
+  margin: 0.5rem 0 !important;
 }
 
-/* 文章页：上下分栏布局，卡片宽度同步调窄 */
 .article-section {
+  max-width: 700px !important;
+  margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 2rem !important;
-  max-width: 800px !important; /* 同步调窄 */
-  margin: 0 auto 3rem !important;
+  gap: 1.5rem !important;
 }
 
 .article-card {
   background: rgba(0, 0, 0, 0.5) !important;
-  padding: 2.5rem !important;
+  padding: 2rem !important;
   border-radius: 20px !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
   text-align: center !important;
+  cursor: pointer !important;
+  transition: 0.3s !important;
+}
+
+.article-card:hover {
+  transform: scale(1.02) !important;
 }
 
 body.dark .article-card {
   background: rgba(0, 0, 0, 0.7) !important;
-}
-
-.article-card h2 {
-  font-size: 2.5rem !important;
-  margin-bottom: 1rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
 }
 
 /* 底部 */
@@ -260,7 +268,6 @@ body.dark footer {
   border-top-color: rgba(68,68,68,0.3) !important;
 }
 
-/* 容器居中 */
 .container {
   max-width: 1200px !important;
   margin: 0 auto !important;
