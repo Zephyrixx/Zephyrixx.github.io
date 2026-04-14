@@ -1,4 +1,4 @@
-/* 全局重置，强制覆盖simple.css的默认样式 */
+/* 全局重置，强制覆盖 simple.css */
 * {
   margin: 0 !important;
   padding: 0 !important;
@@ -9,30 +9,17 @@ body {
   background: #f7f8fa !important;
   color: #333 !important;
   line-height: 1.7 !important;
-  transition: background 0.3s, color 0.3s !important;
-  /* 强制覆盖simple.css的默认边距 */
+  max-width: 100% !important; /* 取消默认最大宽度 */
   padding: 0 !important;
-  max-width: 100% !important;
 }
 
-/* 暗黑模式，强制覆盖 */
+/* 暗黑模式基础样式 */
 body.dark {
-  background: #1a1a1a !important;
+  background: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-body.dark nav,
-body.dark .card,
-body.dark .article-item {
-  background: #2d2d2d !important;
-  color: #eee !important;
-}
-
-body.dark .nav-links a {
-  color: #eee !important;
-}
-
-/* 导航栏，强制置顶+正确样式 */
+/* 导航栏 */
 nav {
   background: #fff !important;
   padding: 1rem 2rem !important;
@@ -41,9 +28,11 @@ nav {
   position: sticky !important;
   top: 0 !important;
   z-index: 999 !important;
-  /* 强制覆盖simple.css的导航样式 */
-  border: none !important;
   border-radius: 0 !important;
+}
+
+body.dark nav {
+  background: #1e1e1e !important;
 }
 
 .nav-container {
@@ -66,7 +55,6 @@ nav {
   gap: 2rem !important;
   list-style: none !important;
   margin: 0 !important;
-  padding: 0 !important;
 }
 
 .nav-links a {
@@ -75,65 +63,61 @@ nav {
   font-weight: 500 !important;
 }
 
+body.dark .nav-links a {
+  color: #eee !important;
+}
+
 .nav-links a:hover {
   color: #0d6efd !important;
 }
 
-#theme-toggle {
-  padding: 0.4rem 0.8rem !important;
-  border: none !important;
-  border-radius: 6px !important;
+/* 暗黑模式按钮样式 */
+.theme-btn {
   background: #0d6efd !important;
   color: white !important;
+  border: none !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 6px !important;
   cursor: pointer !important;
+  font-size: 0.9rem !important;
 }
 
-/* 个人资料 */
-.profile {
-  text-align: center !important;
-  margin-bottom: 2.5rem !important;
-}
-
+/* 头像样式：强制圆形 + 尺寸固定 */
 .avatar {
-  width: 120px !important;
-  height: 120px !important;
+  width: 130px !important;
+  height: 130px !important;
   border-radius: 50% !important;
   object-fit: cover !important;
   margin-bottom: 1rem !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  border: 3px solid white !important; /* 加个白边更美观 */
 }
 
-.bio {
-  color: #666 !important;
-  margin: 0.5rem 0 1rem !important;
-  font-size: 1.2rem !important;
+/* 天青色文字：这是核心修改！ */
+#special-bio {
+  color: #4ECDC4 !important; /* 天青色，确保百分百生效 */
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
 }
 
-body.dark .bio {
-  color: #aaa !important;
+body.dark #special-bio {
+  color: #4ECDC4 !important; /* 暗黑模式下也保持天青色 */
 }
 
-.social {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 1rem !important;
+/* 个人信息布局 */
+.profile {
+  text-align: center !important;
+  margin-bottom: 2.5rem !important;
 }
 
 .social a {
   color: #0d6efd !important;
   text-decoration: none !important;
   font-weight: 500 !important;
-  font-size: 1.2rem !important;
 }
 
-/* 容器，强制居中 */
-.container {
-  max-width: 900px !important;
-  margin: 0 auto !important;
-  padding: 0 1rem !important;
-}
-
-/* 按钮，强制样式 */
+/* 按钮样式 */
 .nav-buttons {
   margin-top: 1rem !important;
   display: flex !important;
@@ -150,67 +134,15 @@ body.dark .bio {
   text-decoration: none !important;
   transition: 0.3s !important;
   border: none !important;
+  font-weight: 500 !important;
 }
 
 .button:hover {
-  background: #0a58ca !important;
   transform: translateY(-3px) !important;
-  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2) !important;
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3) !important;
 }
 
-/* 卡片 */
-.card-list {
-  margin-top: 2rem !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1.2rem !important;
-}
-
-.card {
-  background: white !important;
-  padding: 1.5rem !important;
-  border-radius: 10px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
-  transition: 0.3s !important;
-}
-
-.card:hover {
-  transform: translateY(-3px) !important;
-}
-
-.card h3 {
-  margin-bottom: 0.5rem !important;
-  color: #0d6efd !important;
-}
-
-/* 文章 */
-.article-list {
-  margin-top: 2rem !important;
-}
-
-.article-item {
-  background: white !important;
-  padding: 1.2rem 1.5rem !important;
-  border-radius: 8px !important;
-  margin-bottom: 1rem !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
-}
-
-.article-item h3 {
-  margin-bottom: 0.3rem !important;
-  font-size: 1.1rem !important;
-}
-
-.article-item p {
-  color: #666 !important;
-  font-size: 0.9rem !important;
-}
-
-body.dark .article-item p {
-  color: #aaa !important;
-}
-
-/* 底部，强制样式 */
+/* 底部 */
 footer {
   text-align: center !important;
   margin-top: 4rem !important;
@@ -221,5 +153,5 @@ footer {
 
 body.dark footer {
   color: #aaa !important;
-  border-top-color: #444 !important;
+  border-top-color: #333 !important;
 }

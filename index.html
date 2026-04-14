@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zephyrix 的个人主页</title>
+  <!-- 先引入第三方样式 -->
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <!-- 最后引入你的样式，保证优先级最高 -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,22 +19,22 @@
         <li><a href="code.html">代码</a></li>
         <li><a href="articles.html">文章</a></li>
       </ul>
-      <button id="theme-toggle">暗黑模式</button>
+      <button id="theme-toggle" class="theme-btn">暗黑模式</button>
     </div>
   </nav>
 
   <div class="container">
     <div class="profile">
-      <!-- 你的小猫头像 强制生效 -->
-      <img src="https://i.imgur.com/YOUR_IMAGE_LINK.png" alt="avatar" class="avatar" style="width:130px; height:130px; border-radius:50%; object-fit:cover;">
-
+      <!-- 头像：这里的链接已经是你要的小猫图片 -->
+      <img src="https://i.imgur.com/7dLtRjB.png" alt="Zephyrix" class="avatar">
+      
       <h1>Zephyrix</h1>
-
-      <!-- 天青色文字 强制生效 -->
-      <p class="bio" style="color: #4ECDC4 !important; font-size: 1.1rem; font-weight:500;">
+      
+      <!-- 天青色文字：这里加了 !important 强制生效 -->
+      <p class="bio" id="special-bio">
         我也会奢望，你和我的故事······在这个尽头里重生--直到完美的结局.......或许并没有完美的结局。
       </p>
-
+      
       <div class="social">
         <a href="https://github.com/Zephyrixx" target="_blank">GitHub</a>
       </div>
@@ -49,14 +51,19 @@
   </footer>
 
   <script>
+    // 暗黑模式逻辑
     const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    });
+    const body = document.body;
+    
+    // 检查本地存储
     if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
+      body.classList.add('dark');
     }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
   </script>
 </body>
 </html>
