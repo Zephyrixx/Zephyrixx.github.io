@@ -182,9 +182,9 @@ body.dark .profile {
   box-shadow: 0 6px 20px rgba(13, 110, 253, 0.5) !important;
 }
 
-/* 代码页/文章页 通用卡片样式 */
+/* 代码页/文章页 通用卡片样式：核心修改！宽度从1000px改为600px，更窄 */
 .content-card {
-  max-width: 1000px !important;
+  max-width: 600px !important;
   margin: 0 auto 2rem !important;
   background: rgba(0, 0, 0, 0.5) !important;
   padding: 2.5rem !important;
@@ -223,12 +223,12 @@ body.dark .content-card {
   text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
 }
 
-/* 文章页：上下分栏布局 */
+/* 文章页：上下分栏布局，卡片宽度同步调窄 */
 .article-section {
   display: flex !important;
   flex-direction: column !important;
   gap: 2rem !important;
-  max-width: 1000px !important;
+  max-width: 600px !important;
   margin: 0 auto 3rem !important;
 }
 
