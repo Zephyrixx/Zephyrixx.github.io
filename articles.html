@@ -1,275 +1,54 @@
-/* 全局重置，强制覆盖所有默认样式 */
-* {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章列表 | Zephyrix</title>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="page-body">
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Zephyrix</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="code.html">代码</a></li>
+        <li><a href="articles.html">文章</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-btn">切换模式</button>
+    </div>
+  </nav>
 
-/* 🌟 统一星空背景（全局生效） */
-#page-body {
-  background: url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?w=1920&h=1080&fit=crop') no-repeat center center fixed !important;
-  background-size: cover !important;
-  background-attachment: fixed !important;
-  min-height: 100vh !important;
-  color: #fff !important;
-  line-height: 1.7 !important;
-  max-width: 100% !important;
-  padding: 0 !important;
-}
+  <div class="container">
+    <div class="article-section">
+      <!-- 上栏：文章收藏 -->
+      <div class="article-card">
+        <h2>文章收藏</h2>
+      </div>
+      <!-- 下栏：学习笔记 -->
+      <div class="article-card">
+        <h2>学习笔记</h2>
+      </div>
+    </div>
+  </div>
 
-/* 暗黑模式背景（同一张星空，加深效果） */
-#page-body.dark {
-  background: url('https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?w=1920&h=1080&fit=crop') no-repeat center center fixed !important;
-  background-size: cover !important;
-  background-attachment: fixed !important;
-  background-color: #0a0a0a !important;
-  background-blend-mode: multiply !important;
-  color: #fff !important;
-}
+  <footer>
+    <p>&copy; 2026 Zephyrix</p>
+  </footer>
 
-/* 导航栏：半透明毛玻璃，适配星空背景 */
-nav {
-  background: rgba(0, 0, 0, 0.6) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  padding: 1rem 2rem !important;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.3) !important;
-  margin-bottom: 3rem !important;
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 999 !important;
-  border-radius: 0 !important;
-  border: none !important;
-}
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.getElementById('page-body');
+    
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+    }
 
-body.dark nav {
-  background: rgba(0, 0, 0, 0.8) !important;
-}
-
-.nav-container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-}
-
-.logo {
-  font-size: 1.8rem !important;
-  font-weight: bold !important;
-  color: #0d6efd !important;
-  text-decoration: none !important;
-}
-
-.nav-links {
-  display: flex !important;
-  gap: 2.5rem !important;
-  list-style: none !important;
-  margin: 0 !important;
-}
-
-.nav-links a {
-  text-decoration: none !important;
-  color: #fff !important;
-  font-weight: 500 !important;
-  font-size: 1.2rem !important;
-}
-
-body.dark .nav-links a {
-  color: #fff !important;
-}
-
-.nav-links a:hover {
-  color: #0d6efd !important;
-}
-
-/* 切换模式按钮 */
-.theme-btn {
-  background: #0d6efd !important;
-  color: white !important;
-  border: none !important;
-  padding: 0.6rem 1.2rem !important;
-  border-radius: 12px !important;
-  cursor: pointer !important;
-  font-size: 1rem !important;
-  transition: 0.3s !important;
-}
-
-.theme-btn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4) !important;
-}
-
-/* 头像样式 */
-.avatar {
-  width: 150px !important;
-  height: 150px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  margin-bottom: 1.5rem !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4) !important;
-  border: 4px solid rgba(255,255,255,0.9) !important;
-}
-
-body.dark .avatar {
-  border-color: rgba(68,68,68,0.9) !important;
-}
-
-/* 天青色文字（首页名言） */
-#special-bio {
-  color: #4ECDC4 !important;
-  font-size: 1.3rem !important;
-  font-weight: 500 !important;
-  text-align: center !important;
-  line-height: 1.8 !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-  margin: 1rem 0 !important;
-}
-
-body.dark #special-bio {
-  color: #4ECDC4 !important;
-}
-
-/* 个人信息卡片（首页） */
-.profile {
-  text-align: center !important;
-  max-width: 900px !important;
-  margin: 0 auto 3rem !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-  padding: 2.5rem !important;
-  border-radius: 20px !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
-}
-
-body.dark .profile {
-  background: rgba(0, 0, 0, 0.7) !important;
-}
-
-.social a {
-  color: #0d6efd !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  font-size: 1.3rem !important;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
-}
-
-/* 首页按钮 */
-.nav-buttons {
-  display: flex !important;
-  justify-content: center !important;
-  gap: 1.5rem !important;
-  flex-wrap: wrap !important;
-  margin-top: 2rem !important;
-}
-
-.button {
-  background: #0d6efd !important;
-  color: white !important;
-  padding: 1rem 2.2rem !important;
-  border-radius: 12px !important;
-  text-decoration: none !important;
-  transition: 0.3s !important;
-  border: none !important;
-  font-weight: 500 !important;
-  font-size: 1.2rem !important;
-  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4) !important;
-}
-
-.button:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.5) !important;
-}
-
-/* 代码页/文章页 通用卡片样式 */
-.content-card {
-  max-width: 1000px !important;
-  margin: 0 auto 2rem !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-  padding: 2.5rem !important;
-  border-radius: 20px !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
-  text-align: center !important;
-}
-
-body.dark .content-card {
-  background: rgba(0, 0, 0, 0.7) !important;
-}
-
-.content-card h1 {
-  font-size: 3rem !important;
-  margin-bottom: 1rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-}
-
-.content-card h2 {
-  font-size: 2.2rem !important;
-  margin-bottom: 1.5rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-}
-
-/* 代码页：只保留标题，删除所有小字 */
-.code-card h1 {
-  font-size: 3.5rem !important;
-  margin-bottom: 0.5rem !important;
-}
-
-.code-card h3 {
-  font-size: 2.5rem !important;
-  margin: 1.5rem 0 0.5rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-}
-
-/* 文章页：上下分栏布局 */
-.article-section {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 2rem !important;
-  max-width: 1000px !important;
-  margin: 0 auto 3rem !important;
-}
-
-.article-card {
-  background: rgba(0, 0, 0, 0.5) !important;
-  padding: 2.5rem !important;
-  border-radius: 20px !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
-  text-align: center !important;
-}
-
-body.dark .article-card {
-  background: rgba(0, 0, 0, 0.7) !important;
-}
-
-.article-card h2 {
-  font-size: 2.5rem !important;
-  margin-bottom: 1rem !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-}
-
-/* 底部 */
-footer {
-  text-align: center !important;
-  margin-top: 5rem !important;
-  padding: 2rem 0 !important;
-  color: #aaa !important;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
-  border-top: 1px solid rgba(255,255,255,0.2) !important;
-}
-
-body.dark footer {
-  color: #aaa !important;
-  border-top-color: rgba(68,68,68,0.3) !important;
-}
-
-/* 容器居中 */
-.container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 0 1.5rem !important;
-}
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
