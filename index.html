@@ -23,12 +23,10 @@
 
   <div class="container">
     <div class="profile">
-      <!-- 头像：替换成你喜欢的这张耳机猫图片 -->
-      <img src="https://picsum.photos/seed/zephyrixmusic/120/120" alt="头像" class="avatar">
+      <img src="https://i.imgur.com/9avfXaJ.png" alt="头像" class="avatar" style="width:130px;height:130px;border-radius:50%;object-fit:cover;">
       <h1>Zephyrix</h1>
       
-      <!-- 个人简介：改成你想要的天青色 -->
-      <p class="bio" style="color: #17a2b8; font-size: 1.1rem;">
+      <p class="bio" style="color: #4ECDC4; font-size: 1.15rem; font-weight:500;">
         我也会奢望，你和我的故事······在这个尽头里重生--直到完美的结局.......或许并没有完美的结局。
       </p>
       
@@ -53,7 +51,6 @@
       document.body.classList.toggle('dark');
       localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     });
-
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
     }
