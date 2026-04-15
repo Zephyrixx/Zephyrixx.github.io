@@ -3,60 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>文章列表 | Zephyrix</title>
-  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <title>文章 - Zephyrix</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body id="page-body">
+<body>
   <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">Zephyrix</a>
-      <ul class="nav-links">
-        <li><a href="index.html">首页</a></li>
-        <li><a href="code.html">代码</a></li>
-        <li><a href="articles.html">文章</a></li>
-      </ul>
-      <button id="theme-toggle" class="theme-btn">切换模式</button>
-    </div>
+    <a href="index.html" class="logo">Zephyrix</a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="code.html">代码</a></li>
+      <li><a href="articles.html">文章</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">切换模式</button>
   </nav>
 
   <div class="container">
-    <div class="card" onclick="toggle('art1')">
+    <div class="card" onclick="toggle('a1')">
       <h2>文章收藏</h2>
-      <div class="detail" id="art1">
-        <p>• Git & GitHub 完全使用指南</p>
-        <p>• C 语言指针与内存管理</p>
-        <p>• Python 爬虫基础与反爬</p>
-        <p>• Linux 环境与 Docker 入门</p>
+      <div class="detail" id="a1">
+        <p>• Git & GitHub 完全指南</p>
+        <p>• C 语言指针与内存</p>
+        <p>• Python 爬虫基础</p>
+        <p>• Linux 与 Docker 入门</p>
       </div>
     </div>
 
-    <div class="card" onclick="toggle('art2')">
+    <div class="card" onclick="toggle('a2')">
       <h2>学习笔记</h2>
-      <div class="detail" id="art2">
+      <div class="detail" id="a2">
         <p>• 数据结构与算法</p>
-        <p>• 操作系统</p>
-        <p>• 计算机网络</p>
+        <p>• 操作系统基础</p>
+        <p>• 计算机网络总结</p>
+        <p>• 嵌入式开发笔记</p>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2026 Zephyrix</p>
-  </footer>
+  <footer>&copy; 2026 Zephyrix</footer>
 
   <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.getElementById('page-body');
-    
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark');
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    const btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     });
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 
     function toggle(id) {
       document.getElementById(id).classList.toggle('show');

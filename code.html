@@ -3,59 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的代码 | Zephyrix</title>
-  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <title>代码 - Zephyrix</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body id="page-body">
+<body>
   <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">Zephyrix</a>
-      <ul class="nav-links">
-        <li><a href="index.html">首页</a></li>
-        <li><a href="code.html">代码</a></li>
-        <li><a href="articles.html">文章</a></li>
-      </ul>
-      <button id="theme-toggle" class="theme-btn">切换模式</button>
-    </div>
+    <a href="index.html" class="logo">Zephyrix</a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="code.html">代码</a></li>
+      <li><a href="articles.html">文章</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">切换模式</button>
   </nav>
 
   <div class="container">
-    <div class="card" onclick="toggle('code1')">
+    <div class="card" onclick="toggle('c1')">
       <h2>我的代码项目</h2>
-      <div class="detail" id="code1">
+      <div class="detail" id="c1">
         <p>• Python 爬虫</p>
         <p>• 数据处理工具</p>
         <p>• 自动化脚本</p>
       </div>
     </div>
 
-    <div class="card" onclick="toggle('code2')">
+    <div class="card" onclick="toggle('c2')">
       <h2>Python 爬虫</h2>
-      <div class="detail" id="code2">
-        <p>• 网页抓取</p>
-        <p>• 数据解析</p>
-        <p>• 反爬处理</p>
+      <div class="detail" id="c2">
+        <p>• 网页数据抓取</p>
+        <p>• 接口请求与解析</p>
+        <p>• 反爬与伪装</p>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2026 Zephyrix</p>
-  </footer>
+  <footer>&copy; 2026 Zephyrix</footer>
 
   <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.getElementById('page-body');
-    
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark');
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    const btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     });
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 
     function toggle(id) {
       document.getElementById(id).classList.toggle('show');

@@ -3,57 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zephyrix 的个人主页</title>
-  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <title>Zephyrix</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body id="page-body">
+<body>
   <nav>
-    <div class="nav-container">
-      <a href="index.html" class="logo">Zephyrix</a>
-      <ul class="nav-links">
-        <li><a href="index.html">首页</a></li>
-        <li><a href="code.html">代码</a></li>
-        <li><a href="articles.html">文章</a></li>
-      </ul>
-      <button id="theme-toggle" class="theme-btn">切换模式</button>
-    </div>
+    <a href="index.html" class="logo">Zephyrix</a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="code.html">代码</a></li>
+      <li><a href="articles.html">文章</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle">切换模式</button>
   </nav>
 
   <div class="container">
     <div class="profile">
-      <img src="avatar.png" alt="Zephyrix" class="avatar">
+      <img src="avatar.png" alt="Avatar" class="avatar">
       <h1>Zephyrix</h1>
-      <p class="bio" id="special-bio">
-        我也会奢望，你和我的故事······在这个尽头里重生--直到完美的结局.......或许并没有完美的结局。
-      </p>
-      <div class="social">
-        <a href="https://github.com/Zephyrixx" target="_blank">GitHub</a>
+      <p class="bio">我也会奢望，你和我的故事在这个尽头里重生——直到完美的结局。或许并没有完美的结局。</p>
+      <div class="btn-group">
+        <a href="code.html" class="button">我的代码</a>
+        <a href="articles.html" class="button">文章列表</a>
       </div>
-    </div>
-
-    <div class="nav-buttons">
-      <a href="code.html" class="button">我的代码</a>
-      <a href="articles.html" class="button">文章列表</a>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2026 Zephyrix | 个人主页</p>
-  </footer>
+  <footer>&copy; 2026 Zephyrix</footer>
 
   <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.getElementById('page-body');
-    
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark');
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    const btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     });
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
   </script>
 </body>
 </html>
